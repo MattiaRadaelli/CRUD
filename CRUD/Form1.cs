@@ -17,9 +17,12 @@ namespace CRUD
             public string nome;
             public float costo;
         }
-        public Prodotto[] p = new Prodotto[99];
+        public Prodotto[] p = new Prodotto[0];
+        int[] i = new int[];
         public int dim = 0;
         public int prodotti = 0;
+        public float scambio = 0;
+        public string scambios = "";
         public Form1()
         {
             InitializeComponent();
@@ -32,7 +35,8 @@ namespace CRUD
             prodotti++;
         }
         public void R()
-        {      
+        {
+            ListaProd.Items.Clear();
             for (int i = 0; i < prodotti; i++)
             {
                 ListaProd.Items.Add(p[i].nome + " " + p[i].costo + "€" );
@@ -51,12 +55,28 @@ namespace CRUD
                 ListaProd.Items.Add(p[i].nome + " " + p[i].costo + "€");
             }
         }
+        public void D()
+        {
+            for (int i = 0; i < prodotti; i++)
+            {
+                if (testocanc.Text == p[i].nome)
+                {
+                    for (int z = i; z < p.Length-1 ; z++)
+                    {                       
+                        p[z].costo = p[z + 1].costo;
+                        p[z].nome = p[z + 1].nome;
+                    }
+                }
+            }
+
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
         private void Aggiungi_Click(object sender, EventArgs e)
         {
+            p = new Prodotto[p.Length+1];
             C();
             prodotto.Text = null;
             prezzo.Text = null;
@@ -66,11 +86,17 @@ namespace CRUD
         private void visualizza_Click(object sender, EventArgs e)
         {
             R();
+            testocanc.Text = null;
         }
 
         private void modificabut_Click(object sender, EventArgs e)
         {
             U();
+        }
+        private void Cancella_Click(object sender, EventArgs e)
+        {           
+            D();
+            p = new Prodotto[p.Length - 1];
         }
 
         private void cercabut_Click(object sender, EventArgs e)
@@ -84,5 +110,7 @@ namespace CRUD
                 }
             }
         }
+
+        
     }
 }

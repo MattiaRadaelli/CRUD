@@ -44,6 +44,9 @@
             this.prezzomodific = new System.Windows.Forms.Label();
             this.modificabut = new System.Windows.Forms.Button();
             this.cercabut = new System.Windows.Forms.Button();
+            this.Cancella = new System.Windows.Forms.Button();
+            this.prodcanc = new System.Windows.Forms.Label();
+            this.testocanc = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // InserisciProd
@@ -189,11 +192,41 @@
             this.cercabut.UseVisualStyleBackColor = true;
             this.cercabut.Click += new System.EventHandler(this.cercabut_Click);
             // 
+            // Cancella
+            // 
+            this.Cancella.Location = new System.Drawing.Point(203, 177);
+            this.Cancella.Name = "Cancella";
+            this.Cancella.Size = new System.Drawing.Size(180, 26);
+            this.Cancella.TabIndex = 17;
+            this.Cancella.Text = "Cancella il Prodotto";
+            this.Cancella.UseVisualStyleBackColor = true;
+            this.Cancella.Click += new System.EventHandler(this.Cancella_Click);
+            // 
+            // prodcanc
+            // 
+            this.prodcanc.AutoSize = true;
+            this.prodcanc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prodcanc.Location = new System.Drawing.Point(9, 165);
+            this.prodcanc.Name = "prodcanc";
+            this.prodcanc.Size = new System.Drawing.Size(141, 13);
+            this.prodcanc.TabIndex = 18;
+            this.prodcanc.Text = "Prodotto da Cancellare:";
+            // 
+            // testocanc
+            // 
+            this.testocanc.Location = new System.Drawing.Point(12, 181);
+            this.testocanc.Name = "testocanc";
+            this.testocanc.Size = new System.Drawing.Size(185, 20);
+            this.testocanc.TabIndex = 19;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.testocanc);
+            this.Controls.Add(this.prodcanc);
+            this.Controls.Add(this.Cancella);
             this.Controls.Add(this.cercabut);
             this.Controls.Add(this.modificabut);
             this.Controls.Add(this.prezzomodific);
@@ -236,6 +269,9 @@
         private System.Windows.Forms.Label prezzomodific;
         private System.Windows.Forms.Button modificabut;
         private System.Windows.Forms.Button cercabut;
+        private System.Windows.Forms.Button Cancella;
+        private System.Windows.Forms.Label prodcanc;
+        private System.Windows.Forms.TextBox testocanc;
     }
 }
 
