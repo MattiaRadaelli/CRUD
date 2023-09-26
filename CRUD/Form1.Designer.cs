@@ -36,13 +36,21 @@
             this.InserisciPrez = new System.Windows.Forms.Label();
             this.prodotto = new System.Windows.Forms.TextBox();
             this.visualizza = new System.Windows.Forms.Button();
+            this.Ricerca = new System.Windows.Forms.Label();
+            this.modifica = new System.Windows.Forms.TextBox();
+            this.costomodific = new System.Windows.Forms.TextBox();
+            this.prodmodificato = new System.Windows.Forms.TextBox();
+            this.nomemodific = new System.Windows.Forms.Label();
+            this.prezzomodific = new System.Windows.Forms.Label();
+            this.modificabut = new System.Windows.Forms.Button();
+            this.cercabut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // InserisciProd
             // 
             this.InserisciProd.AutoSize = true;
             this.InserisciProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InserisciProd.Location = new System.Drawing.Point(12, 6);
+            this.InserisciProd.Location = new System.Drawing.Point(9, 6);
             this.InserisciProd.Name = "InserisciProd";
             this.InserisciProd.Size = new System.Drawing.Size(110, 13);
             this.InserisciProd.TabIndex = 0;
@@ -58,9 +66,9 @@
             // 
             // Aggiungi
             // 
-            this.Aggiungi.Location = new System.Drawing.Point(188, 22);
+            this.Aggiungi.Location = new System.Drawing.Point(203, 18);
             this.Aggiungi.Name = "Aggiungi";
-            this.Aggiungi.Size = new System.Drawing.Size(95, 59);
+            this.Aggiungi.Size = new System.Drawing.Size(180, 27);
             this.Aggiungi.TabIndex = 3;
             this.Aggiungi.Text = "Aggiungi alla Lista";
             this.Aggiungi.UseVisualStyleBackColor = true;
@@ -80,14 +88,14 @@
             // 
             this.prezzo.Location = new System.Drawing.Point(12, 61);
             this.prezzo.Name = "prezzo";
-            this.prezzo.Size = new System.Drawing.Size(170, 20);
+            this.prezzo.Size = new System.Drawing.Size(185, 20);
             this.prezzo.TabIndex = 5;
             // 
             // InserisciPrez
             // 
             this.InserisciPrez.AutoSize = true;
             this.InserisciPrez.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InserisciPrez.Location = new System.Drawing.Point(12, 45);
+            this.InserisciPrez.Location = new System.Drawing.Point(9, 45);
             this.InserisciPrez.Name = "InserisciPrez";
             this.InserisciPrez.Size = new System.Drawing.Size(100, 13);
             this.InserisciPrez.TabIndex = 6;
@@ -97,24 +105,103 @@
             // 
             this.prodotto.Location = new System.Drawing.Point(12, 22);
             this.prodotto.Name = "prodotto";
-            this.prodotto.Size = new System.Drawing.Size(170, 20);
+            this.prodotto.Size = new System.Drawing.Size(185, 20);
             this.prodotto.TabIndex = 7;
             // 
             // visualizza
             // 
-            this.visualizza.Location = new System.Drawing.Point(289, 22);
+            this.visualizza.Location = new System.Drawing.Point(203, 57);
             this.visualizza.Name = "visualizza";
-            this.visualizza.Size = new System.Drawing.Size(94, 59);
+            this.visualizza.Size = new System.Drawing.Size(180, 27);
             this.visualizza.TabIndex = 8;
             this.visualizza.Text = "Visualizza la Lista";
             this.visualizza.UseVisualStyleBackColor = true;
             this.visualizza.Click += new System.EventHandler(this.visualizza_Click);
+            // 
+            // Ricerca
+            // 
+            this.Ricerca.AutoSize = true;
+            this.Ricerca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ricerca.Location = new System.Drawing.Point(9, 84);
+            this.Ricerca.Name = "Ricerca";
+            this.Ricerca.Size = new System.Drawing.Size(140, 13);
+            this.Ricerca.TabIndex = 9;
+            this.Ricerca.Text = "Prodotto da Modificare:";
+            // 
+            // modifica
+            // 
+            this.modifica.Location = new System.Drawing.Point(12, 100);
+            this.modifica.Name = "modifica";
+            this.modifica.Size = new System.Drawing.Size(185, 20);
+            this.modifica.TabIndex = 10;
+            // 
+            // costomodific
+            // 
+            this.costomodific.Location = new System.Drawing.Point(153, 142);
+            this.costomodific.Name = "costomodific";
+            this.costomodific.Size = new System.Drawing.Size(44, 20);
+            this.costomodific.TabIndex = 11;
+            // 
+            // prodmodificato
+            // 
+            this.prodmodificato.Location = new System.Drawing.Point(12, 142);
+            this.prodmodificato.Name = "prodmodificato";
+            this.prodmodificato.Size = new System.Drawing.Size(137, 20);
+            this.prodmodificato.TabIndex = 12;
+            // 
+            // nomemodific
+            // 
+            this.nomemodific.AutoSize = true;
+            this.nomemodific.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomemodific.Location = new System.Drawing.Point(9, 123);
+            this.nomemodific.Name = "nomemodific";
+            this.nomemodific.Size = new System.Drawing.Size(59, 13);
+            this.nomemodific.TabIndex = 13;
+            this.nomemodific.Text = "Prodotto:";
+            // 
+            // prezzomodific
+            // 
+            this.prezzomodific.AutoSize = true;
+            this.prezzomodific.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prezzomodific.Location = new System.Drawing.Point(150, 123);
+            this.prezzomodific.Name = "prezzomodific";
+            this.prezzomodific.Size = new System.Drawing.Size(49, 13);
+            this.prezzomodific.TabIndex = 14;
+            this.prezzomodific.Text = "Prezzo:";
+            // 
+            // modificabut
+            // 
+            this.modificabut.Location = new System.Drawing.Point(203, 136);
+            this.modificabut.Name = "modificabut";
+            this.modificabut.Size = new System.Drawing.Size(180, 26);
+            this.modificabut.TabIndex = 15;
+            this.modificabut.Text = "Modifica il Prodotto";
+            this.modificabut.UseVisualStyleBackColor = true;
+            this.modificabut.Click += new System.EventHandler(this.modificabut_Click);
+            // 
+            // cercabut
+            // 
+            this.cercabut.Location = new System.Drawing.Point(203, 96);
+            this.cercabut.Name = "cercabut";
+            this.cercabut.Size = new System.Drawing.Size(180, 26);
+            this.cercabut.TabIndex = 16;
+            this.cercabut.Text = "Cerca il Prodotto";
+            this.cercabut.UseVisualStyleBackColor = true;
+            this.cercabut.Click += new System.EventHandler(this.cercabut_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cercabut);
+            this.Controls.Add(this.modificabut);
+            this.Controls.Add(this.prezzomodific);
+            this.Controls.Add(this.nomemodific);
+            this.Controls.Add(this.prodmodificato);
+            this.Controls.Add(this.costomodific);
+            this.Controls.Add(this.modifica);
+            this.Controls.Add(this.Ricerca);
             this.Controls.Add(this.visualizza);
             this.Controls.Add(this.prodotto);
             this.Controls.Add(this.InserisciPrez);
@@ -141,6 +228,14 @@
         private System.Windows.Forms.Label InserisciPrez;
         private System.Windows.Forms.TextBox prodotto;
         private System.Windows.Forms.Button visualizza;
+        private System.Windows.Forms.Label Ricerca;
+        private System.Windows.Forms.TextBox modifica;
+        private System.Windows.Forms.TextBox costomodific;
+        private System.Windows.Forms.TextBox prodmodificato;
+        private System.Windows.Forms.Label nomemodific;
+        private System.Windows.Forms.Label prezzomodific;
+        private System.Windows.Forms.Button modificabut;
+        private System.Windows.Forms.Button cercabut;
     }
 }
 

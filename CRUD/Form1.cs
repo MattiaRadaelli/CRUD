@@ -38,6 +38,19 @@ namespace CRUD
                 ListaProd.Items.Add(p[i].nome + " " + p[i].costo + "€" );
             }
         }
+        public void U()
+        {
+            ListaProd.Items.Clear();
+            for (int i = 0; i < prodotti; i++)
+            {
+                if (modifica.Text == p[i].nome)
+                {
+                    p[i].nome = prodmodificato.Text;
+                    p[i].costo = float.Parse(costomodific.Text);
+                }
+                ListaProd.Items.Add(p[i].nome + " " + p[i].costo + "€");
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -53,6 +66,23 @@ namespace CRUD
         private void visualizza_Click(object sender, EventArgs e)
         {
             R();
+        }
+
+        private void modificabut_Click(object sender, EventArgs e)
+        {
+            U();
+        }
+
+        private void cercabut_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < prodotti; i++)
+            {
+                if (modifica.Text == p[i].nome)
+                {
+                    prodmodificato.Text = p[i].nome;
+                    costomodific.Text = (p[i].costo).ToString(); 
+                }
+            }
         }
     }
 }
