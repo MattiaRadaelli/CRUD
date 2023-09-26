@@ -35,6 +35,7 @@
             this.prezzo = new System.Windows.Forms.TextBox();
             this.InserisciPrez = new System.Windows.Forms.Label();
             this.prodotto = new System.Windows.Forms.TextBox();
+            this.visualizza = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // InserisciProd
@@ -99,11 +100,22 @@
             this.prodotto.Size = new System.Drawing.Size(170, 20);
             this.prodotto.TabIndex = 7;
             // 
+            // visualizza
+            // 
+            this.visualizza.Location = new System.Drawing.Point(289, 22);
+            this.visualizza.Name = "visualizza";
+            this.visualizza.Size = new System.Drawing.Size(94, 59);
+            this.visualizza.TabIndex = 8;
+            this.visualizza.Text = "Visualizza la Lista";
+            this.visualizza.UseVisualStyleBackColor = true;
+            this.visualizza.Click += new System.EventHandler(this.visualizza_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.visualizza);
             this.Controls.Add(this.prodotto);
             this.Controls.Add(this.InserisciPrez);
             this.Controls.Add(this.prezzo);
@@ -128,6 +140,7 @@
         private System.Windows.Forms.TextBox prezzo;
         private System.Windows.Forms.Label InserisciPrez;
         private System.Windows.Forms.TextBox prodotto;
+        private System.Windows.Forms.Button visualizza;
     }
 }
 
