@@ -51,9 +51,9 @@
             // ListaProd
             // 
             this.ListaProd.FormattingEnabled = true;
-            this.ListaProd.Location = new System.Drawing.Point(641, 22);
+            this.ListaProd.Location = new System.Drawing.Point(389, 22);
             this.ListaProd.Name = "ListaProd";
-            this.ListaProd.Size = new System.Drawing.Size(147, 420);
+            this.ListaProd.Size = new System.Drawing.Size(399, 420);
             this.ListaProd.TabIndex = 2;
             // 
             // Aggiungi
@@ -70,7 +70,7 @@
             // 
             this.ListaProdLabel.AutoSize = true;
             this.ListaProdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListaProdLabel.Location = new System.Drawing.Point(638, 6);
+            this.ListaProdLabel.Location = new System.Drawing.Point(386, 6);
             this.ListaProdLabel.Name = "ListaProdLabel";
             this.ListaProdLabel.Size = new System.Drawing.Size(86, 13);
             this.ListaProdLabel.TabIndex = 4;
