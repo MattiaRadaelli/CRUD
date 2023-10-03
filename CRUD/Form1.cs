@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CRUD
 {
-    public partial class Form1 : Form
+    public partial class CRUD : Form
     {
         public struct Prodotto
         {
@@ -19,7 +19,7 @@ namespace CRUD
         }
         public Prodotto[] p = new Prodotto[0];
         public int dim = 0;
-        public Form1()
+        public CRUD()
         {
             InitializeComponent();
         }
@@ -81,21 +81,21 @@ namespace CRUD
             C();
             prodotto.Text = null;
             prezzo.Text = null;
-
-        }
-        private void visualizza_Click(object sender, EventArgs e)
-        {
             R();
-            testocanc.Text = null;
-        }
 
+        }
         private void modificabut_Click(object sender, EventArgs e)
         {
             U();
+            prodmodificato.Text = null; 
+            costomodific.Text = null;
+            modifica.Text = null;
         }
         private void Cancella_Click(object sender, EventArgs e)
         {           
             D();
+            R();
+            testocanc.Text = null;
         }
         private void cercabut_Click(object sender, EventArgs e)
         {
@@ -107,6 +107,35 @@ namespace CRUD
                     costomodific.Text = (p[i].costo).ToString(); 
                 }
             }
-        }     
+        }
+        public void OrdinamentoFunz()
+        {
+            for (int i = 0;i < p.Length - 1;i++) 
+            {
+                for (int j = i + 1; j < p.Length; j++)
+                {
+                    if (p[i].nome.CompareTo(p[j].nome) > 0)
+                    { 
+                        string scambiostring = p[i].nome;
+                        p[i].nome = p[j].nome;
+                        p[j].nome = scambiostring;
+                        float scambionum = p[i].costo;
+                        p[i].costo = p[j].costo;
+                        p[j].costo = scambionum;
+                    }
+                }
+            }
+        }
+        private void Ordinamento_Click(object sender, EventArgs e)
+        {
+            OrdinamentoFunz();
+            R();
+        }
+
+        private void SommaPrezzi_Click(object sender, EventArgs e)
+        {
+            
+            Totaleprez.Text = ;
+        }
     }
 }
