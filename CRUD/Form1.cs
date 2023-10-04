@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -170,10 +171,14 @@ namespace CRUD
             Percentuale();
             R();
         }
-
         private void salvafile_Click(object sender, EventArgs e)
         {
-
+            StreamWriter lettore = new StreamWriter("Salvato.txt");
+            for (int i = 0; i < p.Length; i++)
+            {
+                lettore.Write(p[i].nome + " " + p[i].costo + "€ ; ");
+            }
+            lettore.Close();
         }
     }
 }
