@@ -19,6 +19,9 @@ namespace CRUD
         }
         public Prodotto[] p = new Prodotto[0];
         public int dim = 0;
+        public float percentuale = 0;
+        public float valorepercentuale = 0;
+        public int segno = 1;
         public CRUD()
         {
             InitializeComponent();
@@ -134,8 +137,43 @@ namespace CRUD
 
         private void SommaPrezzi_Click(object sender, EventArgs e)
         {
-            
-            Totaleprez.Text = ;
+            float totalesomma = 0;
+            for (int i = 0; i < p.Length; i++)
+            {
+                totalesomma += p[i].costo;
+            }
+            Totaleprez.Text = "Totale Dei Prezzi: " + totalesomma + "€";
+        }
+
+        public void Percentuale()
+        {
+            for (int i = 0; i<p.Length; i++)
+            {
+                valorepercentuale = (p[i].costo / 100) * percentuale;
+                p[i].costo += valorepercentuale * segno;
+            }
+        }
+        private void butsomm_Click(object sender, EventArgs e)
+        {           
+            percentuale = float.Parse(Percent.Text);
+            Percent.Text = null;
+            segno = 1;
+            Percentuale();
+            R();
+        }
+
+        private void butsott_Click(object sender, EventArgs e)
+        {
+            percentuale = float.Parse(Percent.Text);
+            Percent.Text = null;
+            segno = -1;
+            Percentuale();
+            R();
+        }
+
+        private void salvafile_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
