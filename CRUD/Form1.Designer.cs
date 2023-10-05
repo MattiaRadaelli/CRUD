@@ -277,10 +277,10 @@
             // 
             // SommaPrezzi
             // 
-            this.SommaPrezzi.Location = new System.Drawing.Point(493, 270);
+            this.SommaPrezzi.Location = new System.Drawing.Point(496, 260);
             this.SommaPrezzi.Margin = new System.Windows.Forms.Padding(4);
             this.SommaPrezzi.Name = "SommaPrezzi";
-            this.SommaPrezzi.Size = new System.Drawing.Size(129, 25);
+            this.SommaPrezzi.Size = new System.Drawing.Size(129, 33);
             this.SommaPrezzi.TabIndex = 23;
             this.SommaPrezzi.Text = "Aggiorna Totale";
             this.SommaPrezzi.UseVisualStyleBackColor = true;
@@ -290,7 +290,7 @@
             // 
             this.InserisciPerc.AutoSize = true;
             this.InserisciPerc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InserisciPerc.Location = new System.Drawing.Point(861, 461);
+            this.InserisciPerc.Location = new System.Drawing.Point(856, 461);
             this.InserisciPerc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.InserisciPerc.Name = "InserisciPerc";
             this.InserisciPerc.Size = new System.Drawing.Size(165, 17);
@@ -408,6 +408,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1058, 559);
             this.Controls.Add(this.prezmaxlab);
             this.Controls.Add(this.butprezmax);
