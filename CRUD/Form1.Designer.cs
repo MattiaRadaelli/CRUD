@@ -57,6 +57,10 @@
             this.File = new System.Windows.Forms.Label();
             this.salvafile = new System.Windows.Forms.Button();
             this.leggifile = new System.Windows.Forms.Button();
+            this.butprezmin = new System.Windows.Forms.Button();
+            this.prezminlab = new System.Windows.Forms.Label();
+            this.butprezmax = new System.Windows.Forms.Button();
+            this.prezmaxlab = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // InserisciProd
@@ -74,10 +78,10 @@
             // 
             this.ListaProd.FormattingEnabled = true;
             this.ListaProd.ItemHeight = 16;
-            this.ListaProd.Location = new System.Drawing.Point(708, 27);
+            this.ListaProd.Location = new System.Drawing.Point(484, 27);
             this.ListaProd.Margin = new System.Windows.Forms.Padding(4);
             this.ListaProd.Name = "ListaProd";
-            this.ListaProd.Size = new System.Drawing.Size(341, 260);
+            this.ListaProd.Size = new System.Drawing.Size(564, 276);
             this.ListaProd.TabIndex = 2;
             // 
             // Aggiungi
@@ -95,7 +99,7 @@
             // 
             this.ListaProdLabel.AutoSize = true;
             this.ListaProdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListaProdLabel.Location = new System.Drawing.Point(704, 7);
+            this.ListaProdLabel.Location = new System.Drawing.Point(481, 7);
             this.ListaProdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ListaProdLabel.Name = "ListaProdLabel";
             this.ListaProdLabel.Size = new System.Drawing.Size(110, 17);
@@ -133,7 +137,7 @@
             // 
             this.Ricerca.AutoSize = true;
             this.Ricerca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ricerca.Location = new System.Drawing.Point(12, 103);
+            this.Ricerca.Location = new System.Drawing.Point(13, 155);
             this.Ricerca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ricerca.Name = "Ricerca";
             this.Ricerca.Size = new System.Drawing.Size(178, 17);
@@ -142,7 +146,7 @@
             // 
             // modifica
             // 
-            this.modifica.Location = new System.Drawing.Point(16, 123);
+            this.modifica.Location = new System.Drawing.Point(18, 176);
             this.modifica.Margin = new System.Windows.Forms.Padding(4);
             this.modifica.Name = "modifica";
             this.modifica.Size = new System.Drawing.Size(221, 22);
@@ -150,7 +154,7 @@
             // 
             // costomodific
             // 
-            this.costomodific.Location = new System.Drawing.Point(416, 123);
+            this.costomodific.Location = new System.Drawing.Point(416, 176);
             this.costomodific.Margin = new System.Windows.Forms.Padding(4);
             this.costomodific.Name = "costomodific";
             this.costomodific.Size = new System.Drawing.Size(52, 22);
@@ -158,7 +162,7 @@
             // 
             // prodmodificato
             // 
-            this.prodmodificato.Location = new System.Drawing.Point(247, 123);
+            this.prodmodificato.Location = new System.Drawing.Point(247, 176);
             this.prodmodificato.Margin = new System.Windows.Forms.Padding(4);
             this.prodmodificato.Name = "prodmodificato";
             this.prodmodificato.Size = new System.Drawing.Size(160, 22);
@@ -168,7 +172,7 @@
             // 
             this.nomemodific.AutoSize = true;
             this.nomemodific.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomemodific.Location = new System.Drawing.Point(243, 103);
+            this.nomemodific.Location = new System.Drawing.Point(244, 155);
             this.nomemodific.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nomemodific.Name = "nomemodific";
             this.nomemodific.Size = new System.Drawing.Size(75, 17);
@@ -179,7 +183,7 @@
             // 
             this.prezzomodific.AutoSize = true;
             this.prezzomodific.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prezzomodific.Location = new System.Drawing.Point(412, 103);
+            this.prezzomodific.Location = new System.Drawing.Point(413, 155);
             this.prezzomodific.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.prezzomodific.Name = "prezzomodific";
             this.prezzomodific.Size = new System.Drawing.Size(63, 17);
@@ -188,7 +192,7 @@
             // 
             // modificabut
             // 
-            this.modificabut.Location = new System.Drawing.Point(247, 155);
+            this.modificabut.Location = new System.Drawing.Point(246, 206);
             this.modificabut.Margin = new System.Windows.Forms.Padding(4);
             this.modificabut.Name = "modificabut";
             this.modificabut.Size = new System.Drawing.Size(223, 32);
@@ -199,7 +203,7 @@
             // 
             // cercabut
             // 
-            this.cercabut.Location = new System.Drawing.Point(16, 155);
+            this.cercabut.Location = new System.Drawing.Point(16, 206);
             this.cercabut.Margin = new System.Windows.Forms.Padding(4);
             this.cercabut.Name = "cercabut";
             this.cercabut.Size = new System.Drawing.Size(223, 32);
@@ -210,7 +214,7 @@
             // 
             // Cancella
             // 
-            this.Cancella.Location = new System.Drawing.Point(16, 252);
+            this.Cancella.Location = new System.Drawing.Point(484, 514);
             this.Cancella.Margin = new System.Windows.Forms.Padding(4);
             this.Cancella.Name = "Cancella";
             this.Cancella.Size = new System.Drawing.Size(223, 32);
@@ -223,7 +227,7 @@
             // 
             this.prodcanc.AutoSize = true;
             this.prodcanc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prodcanc.Location = new System.Drawing.Point(12, 201);
+            this.prodcanc.Location = new System.Drawing.Point(506, 461);
             this.prodcanc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.prodcanc.Name = "prodcanc";
             this.prodcanc.Size = new System.Drawing.Size(180, 17);
@@ -232,7 +236,7 @@
             // 
             // testocanc
             // 
-            this.testocanc.Location = new System.Drawing.Point(16, 220);
+            this.testocanc.Location = new System.Drawing.Point(484, 482);
             this.testocanc.Margin = new System.Windows.Forms.Padding(4);
             this.testocanc.Name = "testocanc";
             this.testocanc.Size = new System.Drawing.Size(221, 22);
@@ -242,7 +246,7 @@
             // 
             this.OrdinamentoAlfa.AutoSize = true;
             this.OrdinamentoAlfa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrdinamentoAlfa.Location = new System.Drawing.Point(243, 201);
+            this.OrdinamentoAlfa.Location = new System.Drawing.Point(846, 315);
             this.OrdinamentoAlfa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.OrdinamentoAlfa.Name = "OrdinamentoAlfa";
             this.OrdinamentoAlfa.Size = new System.Drawing.Size(178, 17);
@@ -251,7 +255,7 @@
             // 
             // Ordinamento
             // 
-            this.Ordinamento.Location = new System.Drawing.Point(247, 220);
+            this.Ordinamento.Location = new System.Drawing.Point(825, 336);
             this.Ordinamento.Margin = new System.Windows.Forms.Padding(4);
             this.Ordinamento.Name = "Ordinamento";
             this.Ordinamento.Size = new System.Drawing.Size(223, 64);
@@ -264,7 +268,7 @@
             // 
             this.Totaleprez.AutoSize = true;
             this.Totaleprez.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Totaleprez.Location = new System.Drawing.Point(476, 7);
+            this.Totaleprez.Location = new System.Drawing.Point(861, 6);
             this.Totaleprez.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Totaleprez.Name = "Totaleprez";
             this.Totaleprez.Size = new System.Drawing.Size(138, 17);
@@ -273,10 +277,10 @@
             // 
             // SommaPrezzi
             // 
-            this.SommaPrezzi.Location = new System.Drawing.Point(477, 27);
+            this.SommaPrezzi.Location = new System.Drawing.Point(493, 270);
             this.SommaPrezzi.Margin = new System.Windows.Forms.Padding(4);
             this.SommaPrezzi.Name = "SommaPrezzi";
-            this.SommaPrezzi.Size = new System.Drawing.Size(223, 64);
+            this.SommaPrezzi.Size = new System.Drawing.Size(129, 25);
             this.SommaPrezzi.TabIndex = 23;
             this.SommaPrezzi.Text = "Aggiorna Totale";
             this.SommaPrezzi.UseVisualStyleBackColor = true;
@@ -286,7 +290,7 @@
             // 
             this.InserisciPerc.AutoSize = true;
             this.InserisciPerc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InserisciPerc.Location = new System.Drawing.Point(483, 103);
+            this.InserisciPerc.Location = new System.Drawing.Point(861, 461);
             this.InserisciPerc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.InserisciPerc.Name = "InserisciPerc";
             this.InserisciPerc.Size = new System.Drawing.Size(165, 17);
@@ -295,7 +299,7 @@
             // 
             // Percent
             // 
-            this.Percent.Location = new System.Drawing.Point(479, 123);
+            this.Percent.Location = new System.Drawing.Point(827, 482);
             this.Percent.Margin = new System.Windows.Forms.Padding(4);
             this.Percent.Name = "Percent";
             this.Percent.Size = new System.Drawing.Size(221, 22);
@@ -303,7 +307,7 @@
             // 
             // butsomm
             // 
-            this.butsomm.Location = new System.Drawing.Point(479, 155);
+            this.butsomm.Location = new System.Drawing.Point(827, 514);
             this.butsomm.Margin = new System.Windows.Forms.Padding(4);
             this.butsomm.Name = "butsomm";
             this.butsomm.Size = new System.Drawing.Size(101, 32);
@@ -314,7 +318,7 @@
             // 
             // butsott
             // 
-            this.butsott.Location = new System.Drawing.Point(599, 153);
+            this.butsott.Location = new System.Drawing.Point(947, 512);
             this.butsott.Margin = new System.Windows.Forms.Padding(4);
             this.butsott.Name = "butsott";
             this.butsott.Size = new System.Drawing.Size(101, 32);
@@ -327,7 +331,7 @@
             // 
             this.File.AutoSize = true;
             this.File.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.File.Location = new System.Drawing.Point(474, 201);
+            this.File.Location = new System.Drawing.Point(532, 315);
             this.File.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.File.Name = "File";
             this.File.Size = new System.Drawing.Size(134, 17);
@@ -336,7 +340,7 @@
             // 
             // salvafile
             // 
-            this.salvafile.Location = new System.Drawing.Point(478, 220);
+            this.salvafile.Location = new System.Drawing.Point(484, 336);
             this.salvafile.Margin = new System.Windows.Forms.Padding(4);
             this.salvafile.Name = "salvafile";
             this.salvafile.Size = new System.Drawing.Size(103, 64);
@@ -347,19 +351,68 @@
             // 
             // leggifile
             // 
-            this.leggifile.Location = new System.Drawing.Point(598, 220);
+            this.leggifile.Location = new System.Drawing.Point(605, 336);
             this.leggifile.Margin = new System.Windows.Forms.Padding(4);
             this.leggifile.Name = "leggifile";
             this.leggifile.Size = new System.Drawing.Size(102, 64);
             this.leggifile.TabIndex = 30;
             this.leggifile.Text = "Leggi da File";
             this.leggifile.UseVisualStyleBackColor = true;
+            this.leggifile.Click += new System.EventHandler(this.leggifile_Click);
+            // 
+            // butprezmin
+            // 
+            this.butprezmin.Location = new System.Drawing.Point(16, 482);
+            this.butprezmin.Margin = new System.Windows.Forms.Padding(4);
+            this.butprezmin.Name = "butprezmin";
+            this.butprezmin.Size = new System.Drawing.Size(452, 64);
+            this.butprezmin.TabIndex = 31;
+            this.butprezmin.Text = "Aggiorna Prezzo Minimo";
+            this.butprezmin.UseVisualStyleBackColor = true;
+            this.butprezmin.Click += new System.EventHandler(this.butprezmin_Click);
+            // 
+            // prezminlab
+            // 
+            this.prezminlab.AutoSize = true;
+            this.prezminlab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prezminlab.Location = new System.Drawing.Point(185, 461);
+            this.prezminlab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.prezminlab.Name = "prezminlab";
+            this.prezminlab.Size = new System.Drawing.Size(118, 17);
+            this.prezminlab.TabIndex = 32;
+            this.prezminlab.Text = "Prezzo Minimo:";
+            // 
+            // butprezmax
+            // 
+            this.butprezmax.Location = new System.Drawing.Point(16, 336);
+            this.butprezmax.Margin = new System.Windows.Forms.Padding(4);
+            this.butprezmax.Name = "butprezmax";
+            this.butprezmax.Size = new System.Drawing.Size(452, 64);
+            this.butprezmax.TabIndex = 33;
+            this.butprezmax.Text = "Aggiorna Prezzo Massimo";
+            this.butprezmax.UseVisualStyleBackColor = true;
+            this.butprezmax.Click += new System.EventHandler(this.butprezmax_Click);
+            // 
+            // prezmaxlab
+            // 
+            this.prezmaxlab.AutoSize = true;
+            this.prezmaxlab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prezmaxlab.Location = new System.Drawing.Point(173, 315);
+            this.prezmaxlab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.prezmaxlab.Name = "prezmaxlab";
+            this.prezmaxlab.Size = new System.Drawing.Size(130, 17);
+            this.prezmaxlab.TabIndex = 34;
+            this.prezmaxlab.Text = "Prezzo Massimo:";
             // 
             // CRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1058, 559);
+            this.Controls.Add(this.prezmaxlab);
+            this.Controls.Add(this.butprezmax);
+            this.Controls.Add(this.prezminlab);
+            this.Controls.Add(this.butprezmin);
             this.Controls.Add(this.leggifile);
             this.Controls.Add(this.salvafile);
             this.Controls.Add(this.File);
@@ -429,6 +482,10 @@
         private System.Windows.Forms.Label File;
         private System.Windows.Forms.Button salvafile;
         private System.Windows.Forms.Button leggifile;
+        private System.Windows.Forms.Button butprezmin;
+        private System.Windows.Forms.Label prezminlab;
+        private System.Windows.Forms.Button butprezmax;
+        private System.Windows.Forms.Label prezmaxlab;
     }
 }
 

@@ -23,6 +23,7 @@ namespace CRUD
         public float percentuale = 0;
         public float valorepercentuale = 0;
         public int segno = 1;
+        public bool valorenonvalido = false;
         public CRUD()
         {
             InitializeComponent();
@@ -81,25 +82,66 @@ namespace CRUD
         }
         private void Aggiungi_Click(object sender, EventArgs e)
         {
-            Array.Resize(ref p, p.Length + 1);
-            C();
-            prodotto.Text = null;
-            prezzo.Text = null;
-            R();
 
+            if (float.TryParse(prezzo.Text,out _) == false || prezzo.Text == string.Empty || prodotto.Text == string.Empty)
+            { 
+                MessageBox.Show("Inserisci Un Valore Accettabile", "Valore Errato!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valorenonvalido = true;
+            }
+            
+            if (valorenonvalido == false)
+            {
+                Array.Resize(ref p, p.Length + 1);
+                C();
+                prodotto.Text = null;
+                prezzo.Text = null;
+                R();
+            }
+            valorenonvalido = false;
         }
         private void modificabut_Click(object sender, EventArgs e)
         {
-            U();
-            prodmodificato.Text = null; 
-            costomodific.Text = null;
-            modifica.Text = null;
+            if (float.TryParse(costomodific.Text, out _) == false || prodmodificato.Text == string.Empty || costomodific.Text == string.Empty)
+            {
+                MessageBox.Show("Inserisci Dei Valori Accettabili", "Valori Errati!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valorenonvalido = true;
+            }
+
+            if (valorenonvalido == false)
+            {
+                U();
+                prodmodificato.Text = null;
+                costomodific.Text = null;
+                modifica.Text = null;
+            }
+            valorenonvalido = false;
         }
         private void Cancella_Click(object sender, EventArgs e)
-        {           
-            D();
-            R();
-            testocanc.Text = null;
+        {
+            for (int i = 0; i < p.Length; i++)
+            {
+                if (testocanc.Text == p[i].nome)
+                {
+                    valorenonvalido = false;
+                    break;
+                }
+                if (testocanc.Text != p[i].nome)
+                {
+                    valorenonvalido = true;
+                }
+            }
+            if (testocanc.Text == string.Empty || valorenonvalido == true)
+            {
+                MessageBox.Show("Inserisci Un Valore Accettabile", "Valori Errati!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valorenonvalido = true;
+            }
+            if (valorenonvalido == false)
+            {
+                D();
+                R();
+                testocanc.Text = null;
+            }
+            valorenonvalido = false;
         }
         private void cercabut_Click(object sender, EventArgs e)
         {
@@ -108,9 +150,15 @@ namespace CRUD
                 if (modifica.Text == p[i].nome)
                 {
                     prodmodificato.Text = p[i].nome;
-                    costomodific.Text = (p[i].costo).ToString(); 
+                    costomodific.Text = (p[i].costo).ToString();
+                    valorenonvalido = true;
                 }
             }
+            if (valorenonvalido == false)
+            {
+                MessageBox.Show("Inserisci Un Prodotto Esisitente", "Prodotto Errato!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            valorenonvalido = false;
         }
         public void OrdinamentoFunz()
         {
@@ -132,18 +180,39 @@ namespace CRUD
         }
         private void Ordinamento_Click(object sender, EventArgs e)
         {
-            OrdinamentoFunz();
-            R();
+
+            if (p.Length == 0)
+            {
+                MessageBox.Show("Inserisci Prima Dei Prodotti", "Prodotti Inesistenti!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valorenonvalido = true;
+            }
+
+            if (valorenonvalido == false)
+            {
+                OrdinamentoFunz();
+                R();
+            }
+            valorenonvalido = false;
         }
 
         private void SommaPrezzi_Click(object sender, EventArgs e)
         {
-            float totalesomma = 0;
-            for (int i = 0; i < p.Length; i++)
+            if (p.Length == 0)
             {
-                totalesomma += p[i].costo;
+                MessageBox.Show("Inserisci Prima Dei Prodotti", "Prodotti Inesistenti!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valorenonvalido = true;
             }
-            Totaleprez.Text = "Totale Dei Prezzi: " + totalesomma + "€";
+
+            if (valorenonvalido == false)
+            {
+                float totalesomma = 0;
+                for (int i = 0; i < p.Length; i++)
+                {
+                    totalesomma += p[i].costo;
+                }
+                Totaleprez.Text = "Totale Dei Prezzi: " + totalesomma + "€";
+            }
+            valorenonvalido = false;
         }
 
         public void Percentuale()
@@ -155,21 +224,41 @@ namespace CRUD
             }
         }
         private void butsomm_Click(object sender, EventArgs e)
-        {           
-            percentuale = float.Parse(Percent.Text);
-            Percent.Text = null;
-            segno = 1;
-            Percentuale();
-            R();
+        {
+            if (float.TryParse(Percent.Text, out _) == false || Percent.Text == string.Empty)
+            {
+                MessageBox.Show("Inserisci Un Valore Accettabile", "Valore Errato!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valorenonvalido = true;
+            }
+
+            if (valorenonvalido == false)
+            {
+                percentuale = float.Parse(Percent.Text);
+                Percent.Text = null;
+                segno = 1;
+                Percentuale();
+                R();
+            }
+            valorenonvalido = false;
         }
 
         private void butsott_Click(object sender, EventArgs e)
         {
-            percentuale = float.Parse(Percent.Text);
-            Percent.Text = null;
-            segno = -1;
-            Percentuale();
-            R();
+            if (float.TryParse(Percent.Text, out _) == false || Percent.Text == string.Empty)
+            {
+                MessageBox.Show("Inserisci Un Valore Accettabile", "Valore Errato!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valorenonvalido = true;
+            }
+
+            if (valorenonvalido == false)
+            {
+                percentuale = float.Parse(Percent.Text);
+                Percent.Text = null;
+                segno = -1;
+                Percentuale();
+                R();
+            }
+            valorenonvalido = false;
         }
         private void salvafile_Click(object sender, EventArgs e)
         {
@@ -179,6 +268,66 @@ namespace CRUD
                 lettore.Write(p[i].nome + " " + p[i].costo + "€ ; ");
             }
             lettore.Close();
+        }
+
+        private void leggifile_Click(object sender, EventArgs e)
+        {
+            StreamReader lettore = new StreamReader("Salvato.txt");
+            ListaProd.Items.Clear();
+            string riga = lettore.ReadLine();
+            while (riga != null)
+            {              
+                ListaProd.Items.Add(riga);
+                riga = lettore.ReadLine();
+            }
+            lettore.Close();
+        }
+
+        private void butprezmin_Click(object sender, EventArgs e)
+        {
+            if (p.Length == 0)
+            {
+                MessageBox.Show("Inserisci Prima Un Prodotto", "Prodotti Inesistenti!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valorenonvalido = true;
+            }
+
+            if (valorenonvalido == false)
+            {
+                int prezmin = 0;
+                for (int i = 0; i < p.Length - 1; i++)
+                {
+                    if (p[i].costo > p[i + 1].costo)
+                    {
+                        prezmin = i + 1;
+                    }
+                }
+                prezminlab.Text = "Prezzo Minimo: " + p[prezmin].costo + "€ di " + p[prezmin].nome;
+            }
+            valorenonvalido = false;
+            
+        }
+
+        private void butprezmax_Click(object sender, EventArgs e)
+        {
+            if (p.Length == 0)
+            {
+                MessageBox.Show("Inserisci Prima Un Prodotto", "Prodotti Inesistenti!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valorenonvalido = true;
+            }
+
+            if (valorenonvalido == false)
+            {
+                int prezmax = 0;
+                for (int i = 0; i < p.Length - 1; i++)
+                {
+                    if (p[i].costo < p[i + 1].costo)
+                    {
+                        prezmax = i + 1;
+                    }
+                }
+                prezmaxlab.Text = "Prezzo Massimo: " + p[prezmax].costo + "€ di " + p[prezmax].nome;
+            }
+            valorenonvalido = false;
         }
     }
 }
