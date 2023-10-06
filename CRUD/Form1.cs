@@ -13,11 +13,15 @@ namespace CRUD
 {
     public partial class CRUD : Form
     {
+        
+       //   dichiarazione della struct per i prodotti e il loro ripsettivo prezzo
         public struct Prodotto
         {
             public string nome;
             public float costo;
         }
+
+       //   dichiarazione di tutte le variabili utilizzate         
         public Prodotto[] p = new Prodotto[0];
         public int dim = 0;
         public float percentuale = 0;
@@ -28,12 +32,17 @@ namespace CRUD
         {
             InitializeComponent();
         }
+
+        //   Funzione C = Create, aggiunge un nuovo prodotto con il prezzo alla lista
         public void C()
         {
             p[dim].nome = prodotto.Text;
             p[dim].costo = float.Parse(prezzo.Text);
             dim++;
         }
+
+        //   Funzione R = Read, permette di visualizzare i prodotti e i loro prezzi nella lista 
+        //   Con le modifiche della seconda parte la funzione R viene eseguita per ogni bottone senza dover cliccare "visualizza lista"
         public void R()
         {
             ListaProd.Items.Clear();
@@ -42,6 +51,8 @@ namespace CRUD
                 ListaProd.Items.Add(p[i].nome + " " + p[i].costo + "€" );
             }
         }
+
+        //   Funzione U = Uptade, permette di modificare i prodotti e i loro prezzi nella lista 
         public void U()
         {
             ListaProd.Items.Clear();
@@ -55,6 +66,8 @@ namespace CRUD
                 ListaProd.Items.Add(p[i].nome + " " + p[i].costo + "€");
             }
         }
+
+        //   Funzione D = Delete, permette di cancellare i prodotti e i loro prezzi dalla lista e dalla struct
         public void D()
         {
             bool verifica = false;
@@ -80,6 +93,9 @@ namespace CRUD
         {
 
         }
+
+        //   Bottone che viene cliccato per aggiungere un nuovo prodotto con il prezzo
+        //   Ha un controllo che permette di verificare che siano inseriti dei valori in entrambe le caselle di testo e che in quella del prezzo non ci siano parole
         private void Aggiungi_Click(object sender, EventArgs e)
         {
 
@@ -99,6 +115,9 @@ namespace CRUD
             }
             valorenonvalido = false;
         }
+
+        //   Bottone che viene cliccato per modificare un prodotto con il prezzo
+        //   Ha un controllo che permette di verificare che siano inseriti dei valori in entrambe le caselle di testo e che in quella del prezzo non ci siano parole
         private void modificabut_Click(object sender, EventArgs e)
         {
             if (float.TryParse(costomodific.Text, out _) == false || prodmodificato.Text == string.Empty || costomodific.Text == string.Empty)
@@ -116,6 +135,9 @@ namespace CRUD
             }
             valorenonvalido = false;
         }
+
+        //   Bottone che viene cliccato per cancellare un prodotto con il prezzo
+        //   Ha un controllo che permette di verificare che sia inserito un prodotto esistente nella lista
         private void Cancella_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < p.Length; i++)
@@ -143,6 +165,9 @@ namespace CRUD
             }
             valorenonvalido = false;
         }
+
+        //   Bottone che viene cliccato per cercare un prodotto con il prezzo per poterlo modificare poi
+        //   Ha un controllo che permette di verificare che sia inserito un prodotto esistente nella lista
         private void cercabut_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < p.Length; i++)
@@ -156,10 +181,12 @@ namespace CRUD
             }
             if (valorenonvalido == false)
             {
-                MessageBox.Show("Inserisci Un Prodotto Esisitente", "Prodotto Errato!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nessun Prodotto Esistente", "Prodotto Errato!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             valorenonvalido = false;
         }
+
+        //   Funzione che viene usata per ordinare i prodotti con i prezzi in modo alfabetico
         public void OrdinamentoFunz()
         {
             for (int i = 0;i < p.Length - 1;i++) 
@@ -178,6 +205,9 @@ namespace CRUD
                 }
             }
         }
+
+        //   Bottone che viene cliccato per ordinare i prodotti con i prezzi in ordine alfabetico
+        //   Ha un controllo che permette di verificare che siano presenti dei prodotti in lista
         private void Ordinamento_Click(object sender, EventArgs e)
         {
 
@@ -195,6 +225,8 @@ namespace CRUD
             valorenonvalido = false;
         }
 
+        //   Bottone che viene cliccato per sommare i prezzi di tutti i prodotti
+        //   Ha un controllo che permette di verificare che siano presenti dei prodotti in lista
         private void SommaPrezzi_Click(object sender, EventArgs e)
         {
             if (p.Length == 0)
@@ -215,6 +247,7 @@ namespace CRUD
             valorenonvalido = false;
         }
 
+        //   Funzione che viene usata per sommare o sottrarre una percentuale a tutti i prezzi
         public void Percentuale()
         {
             for (int i = 0; i<p.Length; i++)
@@ -223,6 +256,9 @@ namespace CRUD
                 p[i].costo += valorepercentuale * segno;
             }
         }
+
+        //   Bottone che viene cliccato per sommare una percentuale a tutti i prezzi di tutti i prodotti
+        //   Ha un controllo che permette di verificare che siano presenti dei valori corretti nella textbox
         private void butsomm_Click(object sender, EventArgs e)
         {
             if (float.TryParse(Percent.Text, out _) == false || Percent.Text == string.Empty)
@@ -242,6 +278,8 @@ namespace CRUD
             valorenonvalido = false;
         }
 
+        //   Bottone che viene cliccato per sottrarre una percentuale a tutti i prezzi di tutti i prodotti
+        //   Ha un controllo che permette di verificare che siano presenti dei valori corretti nella textbox
         private void butsott_Click(object sender, EventArgs e)
         {
             if (float.TryParse(Percent.Text, out _) == false || Percent.Text == string.Empty)
@@ -260,6 +298,8 @@ namespace CRUD
             }
             valorenonvalido = false;
         }
+
+        //   Bottone che viene cliccato per salvare tutti i prodotti e i prezzi nel file "Salvato.txt"
         private void salvafile_Click(object sender, EventArgs e)
         {
             StreamWriter lettore = new StreamWriter("Salvato.txt");
@@ -270,6 +310,7 @@ namespace CRUD
             lettore.Close();
         }
 
+        //   Bottone che viene cliccato per mostrare tutto ciò che è presente in "Salvato.txt" sulla listbox
         private void leggifile_Click(object sender, EventArgs e)
         {
             StreamReader lettore = new StreamReader("Salvato.txt");
@@ -283,6 +324,8 @@ namespace CRUD
             lettore.Close();
         }
 
+        //   Bottone che viene cliccato per trovare il prodotto col prezzo minore
+        //   Ha un controllo che permette di verificare che siano presenti dei prodotti 
         private void butprezmin_Click(object sender, EventArgs e)
         {
             if (p.Length == 0)
@@ -307,6 +350,8 @@ namespace CRUD
             
         }
 
+        //   Bottone che viene cliccato per trovare il prodotto col prezzo maggiore
+        //   Ha un controllo che permette di verificare che siano presenti dei prodotti 
         private void butprezmax_Click(object sender, EventArgs e)
         {
             if (p.Length == 0)
