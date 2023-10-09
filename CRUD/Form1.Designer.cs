@@ -181,7 +181,7 @@
             // 
             this.modificabut.Location = new System.Drawing.Point(184, 167);
             this.modificabut.Name = "modificabut";
-            this.modificabut.Size = new System.Drawing.Size(167, 26);
+            this.modificabut.Size = new System.Drawing.Size(168, 26);
             this.modificabut.TabIndex = 15;
             this.modificabut.Text = "Modifica il Prodotto";
             this.modificabut.UseVisualStyleBackColor = true;
@@ -191,7 +191,7 @@
             // 
             this.cercabut.Location = new System.Drawing.Point(12, 167);
             this.cercabut.Name = "cercabut";
-            this.cercabut.Size = new System.Drawing.Size(167, 26);
+            this.cercabut.Size = new System.Drawing.Size(169, 26);
             this.cercabut.TabIndex = 16;
             this.cercabut.Text = "Cerca il Prodotto";
             this.cercabut.UseVisualStyleBackColor = true;
@@ -199,7 +199,7 @@
             // 
             // Cancella
             // 
-            this.Cancella.Location = new System.Drawing.Point(363, 418);
+            this.Cancella.Location = new System.Drawing.Point(372, 418);
             this.Cancella.Name = "Cancella";
             this.Cancella.Size = new System.Drawing.Size(167, 26);
             this.Cancella.TabIndex = 17;
@@ -211,7 +211,7 @@
             // 
             this.prodcanc.AutoSize = true;
             this.prodcanc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prodcanc.Location = new System.Drawing.Point(380, 375);
+            this.prodcanc.Location = new System.Drawing.Point(385, 375);
             this.prodcanc.Name = "prodcanc";
             this.prodcanc.Size = new System.Drawing.Size(141, 13);
             this.prodcanc.TabIndex = 18;
@@ -219,7 +219,7 @@
             // 
             // testocanc
             // 
-            this.testocanc.Location = new System.Drawing.Point(363, 392);
+            this.testocanc.Location = new System.Drawing.Point(372, 392);
             this.testocanc.Name = "testocanc";
             this.testocanc.Size = new System.Drawing.Size(167, 20);
             this.testocanc.TabIndex = 19;
@@ -276,7 +276,7 @@
             // 
             // Percent
             // 
-            this.Percent.Location = new System.Drawing.Point(620, 392);
+            this.Percent.Location = new System.Drawing.Point(620, 391);
             this.Percent.Name = "Percent";
             this.Percent.Size = new System.Drawing.Size(167, 20);
             this.Percent.TabIndex = 25;
@@ -285,7 +285,7 @@
             // 
             this.butsomm.Location = new System.Drawing.Point(620, 418);
             this.butsomm.Name = "butsomm";
-            this.butsomm.Size = new System.Drawing.Size(76, 26);
+            this.butsomm.Size = new System.Drawing.Size(83, 26);
             this.butsomm.TabIndex = 26;
             this.butsomm.Text = "Sommala";
             this.butsomm.UseVisualStyleBackColor = true;
@@ -293,9 +293,9 @@
             // 
             // butsott
             // 
-            this.butsott.Location = new System.Drawing.Point(710, 416);
+            this.butsott.Location = new System.Drawing.Point(704, 418);
             this.butsott.Name = "butsott";
-            this.butsott.Size = new System.Drawing.Size(76, 26);
+            this.butsott.Size = new System.Drawing.Size(83, 26);
             this.butsott.TabIndex = 27;
             this.butsott.Text = "Sottraila";
             this.butsott.UseVisualStyleBackColor = true;
@@ -313,7 +313,7 @@
             // 
             // salvafile
             // 
-            this.salvafile.Location = new System.Drawing.Point(363, 273);
+            this.salvafile.Location = new System.Drawing.Point(372, 273);
             this.salvafile.Name = "salvafile";
             this.salvafile.Size = new System.Drawing.Size(77, 52);
             this.salvafile.TabIndex = 29;
@@ -323,7 +323,7 @@
             // 
             // leggifile
             // 
-            this.leggifile.Location = new System.Drawing.Point(454, 273);
+            this.leggifile.Location = new System.Drawing.Point(450, 273);
             this.leggifile.Name = "leggifile";
             this.leggifile.Size = new System.Drawing.Size(76, 52);
             this.leggifile.TabIndex = 30;
@@ -335,7 +335,7 @@
             // 
             this.butprezmin.Location = new System.Drawing.Point(12, 392);
             this.butprezmin.Name = "butprezmin";
-            this.butprezmin.Size = new System.Drawing.Size(339, 52);
+            this.butprezmin.Size = new System.Drawing.Size(340, 52);
             this.butprezmin.TabIndex = 31;
             this.butprezmin.Text = "Aggiorna Prezzo Minimo";
             this.butprezmin.UseVisualStyleBackColor = true;
@@ -355,7 +355,7 @@
             // 
             this.butprezmax.Location = new System.Drawing.Point(12, 273);
             this.butprezmax.Name = "butprezmax";
-            this.butprezmax.Size = new System.Drawing.Size(339, 52);
+            this.butprezmax.Size = new System.Drawing.Size(340, 52);
             this.butprezmax.TabIndex = 33;
             this.butprezmax.Text = "Aggiorna Prezzo Massimo";
             this.butprezmax.UseVisualStyleBackColor = true;

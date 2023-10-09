@@ -342,7 +342,7 @@ namespace CRUD
             StreamWriter lettore = new StreamWriter("Salvato.txt");
             for (int i = 0; i < p.Length; i++)
             {
-                lettore.Write(p[i].nome + " " + p[i].costo + "€ ; ");
+                lettore.WriteLine(p[i].nome + " " + p[i].costo + "€");
             }
             lettore.Close();
         }
