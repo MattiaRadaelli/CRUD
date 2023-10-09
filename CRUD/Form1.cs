@@ -186,14 +186,14 @@ namespace CRUD
             valorenonvalido = false;
         }
 
-        //   Funzione che viene usata per ordinare i prodotti con i prezzi in modo alfabetico
+        //   Funzione che viene usata per ordinare i prodotti con i prezzi in modo alfabetico crescente
         public void OrdinamentoFunz()
         {
-            for (int i = 0;i < p.Length - 1;i++) 
+            for (int i = 0;i < p.Length;i++) 
             {
                 for (int j = i + 1; j < p.Length; j++)
                 {
-                    if (p[i].nome.CompareTo(p[j].nome) > 0)
+                    if (string.Compare(p[i].nome,p[j].nome) > 0)
                     { 
                         string scambiostring = p[i].nome;
                         p[i].nome = p[j].nome;
@@ -206,11 +206,30 @@ namespace CRUD
             }
         }
 
-        //   Bottone che viene cliccato per ordinare i prodotti con i prezzi in ordine alfabetico
-        //   Ha un controllo che permette di verificare che siano presenti dei prodotti in lista
-        private void Ordinamento_Click(object sender, EventArgs e)
+        //   Funzione che viene usata per ordinare i prodotti con i prezzi in modo alfabetico decrescente
+        public void OrdinamentoFunzInv()
         {
+            for (int i = 0; i < p.Length ; i++)
+            {
+                for (int j = i + 1; j < p.Length; j++)
+                {
+                    if (string.Compare(p[i].nome, p[j].nome) < 0 )
+                    {
+                        string scambiostring = p[i].nome;
+                        p[i].nome = p[j].nome;
+                        p[j].nome = scambiostring;
+                        float scambionum = p[i].costo;
+                        p[i].costo = p[j].costo;
+                        p[j].costo = scambionum;
+                    }
+                }
+            }
+        }
 
+        //   Bottone che viene cliccato per ordinare i prodotti con i prezzi in ordine alfabetico crescente
+        //   Ha un controllo che permette di verificare che siano presenti dei prodotti in lista
+        private void OrdinamentoCresc_Click(object sender, EventArgs e)
+        {
             if (p.Length == 0)
             {
                 MessageBox.Show("Inserisci Prima Dei Prodotti", "Prodotti Inesistenti!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -220,6 +239,24 @@ namespace CRUD
             if (valorenonvalido == false)
             {
                 OrdinamentoFunz();
+                R();
+            }
+            valorenonvalido = false;
+        }
+
+        //   Bottone che viene cliccato per ordinare i prodotti con i prezzi in ordine alfabetico decrescente
+        //   Ha un controllo che permette di verificare che siano presenti dei prodotti in lista
+        private void Ordinamentodecre_Click(object sender, EventArgs e)
+        {
+            if (p.Length == 0)
+            {
+                MessageBox.Show("Inserisci Prima Dei Prodotti", "Prodotti Inesistenti!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valorenonvalido = true;
+            }
+
+            if (valorenonvalido == false)
+            {
+                OrdinamentoFunzInv();
                 R();
             }
             valorenonvalido = false;
@@ -374,5 +411,7 @@ namespace CRUD
             }
             valorenonvalido = false;
         }
+
+
     }
 }
